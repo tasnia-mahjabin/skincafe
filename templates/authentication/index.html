@@ -1,39 +1,60 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <meta name="description" content="Your description here.">
-        <meta name="keywords" content="Keyword1, Keyword2, Keyword3, Keyword4">
-        <meta name="author" content="Your Name">
-        <title>Authentication</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name="description" content="Your description here.">
+    <meta name="keywords" content="Keyword1, Keyword2, Keyword3, Keyword4">
+    <meta name="author" content="Your Name">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-        {% for message in messages %}
-        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
-        <strong>Message: </strong> {{message}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span arial-hidden="true">&times;</span>
-        </button>
-        </div> 
-        {%endfor%}  
-
-
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>Message: </strong> {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div> 
+{% endfor %}
 
 
-        <h3> Welcome to SkinCafe! </h3>
 
-        {% if user.is_authenticated %}
-        <h3>Hello! {{fname}} </h3>
-        <h4>You are logged in successfully!</h4>
-        <button type="submit"> <a href="/signout"> SignOut </a></button>
-        { % else %} 
-        <button type="submit"><a href="/signup"> SignUp </a></button>
-        <button type="submit"><a href="/signin"> SignIn </a></button>
-        {%endif%}
-         
-        <script src="" async defer></script>
-    </body>
+{% if user.is_authenticated %}
+    <h4>Welcome to SkinCafe!</h4>
+    <h3>Hello! {{ fname }}</h3>
+    <h4>You are logged in successfully!</h4>
+    <button type="submit"><a href="/signout">SignOut</a></button>
+
+{% else %}
+    <button type="submit"><a href="/signup">SignUp</a></button>
+    <button type="submit"><a href="/signin">SignIn</a></button>
+{% endif %}
+     
+<script src="" async defer></script>
+</body>
 </html>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

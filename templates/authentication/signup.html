@@ -1,52 +1,60 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Your description here.">
-        <meta name="keywords" content="Keyword1, Keyword2, Keyword3, Keyword4">
-        <meta name="author" content="Your Name">
-        <title></title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Your description here.">
+    <meta name="keywords" content="Keyword1, Keyword2, Keyword3, Keyword4">
+    <meta name="author" content="Your Name">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-        {% for message in messages %}
-        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
-        <strong>Message: </strong> {{message}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span arial-hidden="true">&times;</span>
-        </button>
-        </div> 
-        {%endfor%}  
-        
-        <h3> Sign Up </h3>
-        <form action="/signup" method="post">
-        {% csrf_token %}
-            <label for="">Username</label>
-            <input type="text" id="username" name="username" placeholder="Create a username (only letters and numbers)" Required>
-            <br>
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message: </strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div> 
+{% endfor %}
 
-            <label for="">First Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Enter your first name" Required>
-            <br>
+<h3>Sign Up</h3>
+<form action="/signup/" method="post">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="Create a username (only letters and numbers)" required>
+    <br>
 
-            <label for="">Last Name</label>
-            <input type="text" id="lname" name="lname" placeholder="Enter your last name" Required>
-            <br>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+    <br>
 
-            <label for="">Password</label>
-            <input type="password" id="pass1" name="pass1" placeholder="Create Password" Required>
-            <br>
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+    <br>
 
-            <label for="">Confirm your password</label>
-            <input type="password" id="pass2" name="pass2" placeholder="Confirm your password" Required>
-            <br>
+    <label for="pass1">Password</label>
+    <input type="password" id="pass1" name="pass1" placeholder="Create Password" required>
+    <br>
 
-            <button type="submit"> Sign Up </button>
-        </form> 
+    <label for="pass2">Confirm your password</label>
+    <input type="password" id="pass2" name="pass2" placeholder="Confirm your password" required>
+    <br>
+
+  
+    <button type="submit">Sign Up</button>
+</form> 
+
+<script src="" async defer></script>
+</body>
+</html> 
 
 
-        <script src="" async defer></script>
-    </body>
-</html>
+
+
+
+
+ 

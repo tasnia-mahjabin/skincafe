@@ -20,6 +20,7 @@ def signup(request):
         lname= request.POST['lname']
         pass1= request.POST["pass1"]
         pass2= request.POST["pass2"]
+        gender= request.POST["gender"]
 
         if User.objects.filter(username=username):
             messages.error(request,"Username exists already! Try another one.")
@@ -74,4 +75,6 @@ def signout(request):
     logout(request)
     messages.success(request, "Logged Out Successfully!")
     return redirect('home')
-    
+
+
+
